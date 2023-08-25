@@ -61,3 +61,6 @@ RFA_record（仮）は以下の特徴を備えています。
 
 ## 画面遷移図
 [figma](https://www.figma.com/file/un8cIHFMRvSCLWNKG3npIT/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=iHrcsFHyKmszz8YF-1)
+
+## ER図
+[ER図](https://drive.google.com/file/d/1wM5mSui0ylUu6iIfC968MGkoe8Krycow/view?usp=sharing)
