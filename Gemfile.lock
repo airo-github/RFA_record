@@ -87,7 +87,14 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
+    ethon (0.16.0)
+      ffi (>= 1.15.0)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -190,6 +197,8 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     web-console (4.2.0)
@@ -216,6 +225,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  dotenv-rails
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -226,6 +236,7 @@ DEPENDENCIES
   stimulus-rails
   tailwindcss-rails
   turbo-rails
+  typhoeus
   tzinfo-data
   web-console
   webdrivers
