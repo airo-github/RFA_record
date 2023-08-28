@@ -213,7 +213,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   puma (~> 5.0)
-  rails (~> 7.0.7, >= 7.0.7.2)
+  rails (~> 7.0.4)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
