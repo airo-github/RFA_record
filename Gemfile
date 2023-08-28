@@ -26,6 +26,11 @@ gem 'jbuilder'
 
 # .envファイルを読み込むgem
 gem 'dotenv-rails'
+
+# アバター用gem
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
