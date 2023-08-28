@@ -14,30 +14,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // 初期化後の処理の設定
   liff
     .ready.then(() => {
-      //  初期化によって取得できるidtokenの定義
-      const idToken = liff.getIDToken()
-      // bodyにパラメーターの設定
-      const body = `idToken=${idToken}`
-      // リクエスト内容の定義
-      const request = new Request('/user', {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-          'X-CSRF-Token': token
-        },
-        method: 'POST',
-        body: body
-      });
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      } else {
+        liff.getProfile().then(profile => {
+          const idToken = liff.getIDToken()
+          const name = profile.displayName
+          const body = `idToken=${idToken}&name=${name}`
+          const request = new Request('/user', {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+              'X-CSRF-Token': token
+            },
+            method: 'POST',
+            body: body
+          });
 
-      // リクエストを送る
-      fetch(request)
-        // jsonでレスポンスからデータを取得して/after_loginに遷移する
-        .then(response => response.json())
-        .then(data => {
-          data_id = data
+          fetch(request)
+            .then(response => response.json())
+            .then(data => {
+              data_id = data
+            })
+            .then(() => {
+              window.location = '/after_login'
+            })
         })
-        .then(() => {
-          window.location = '/after_login'
-        })
+      }
     })
 })
 
