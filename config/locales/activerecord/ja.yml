@@ -7,3 +7,5 @@ ja:
         name: '名前'
         nickname: '名前'
         avatar: 'アバター'
+        twitter_url: 'Twitterリンク'
+        introduction: '自己紹介'

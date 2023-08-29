@@ -18,6 +18,17 @@
           <th scope="row"><%= User.human_attribute_name(:avatar) %></th>
           <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '50x50' %></td>
         </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:twitter_url) %></th>
+          <td><%= link_to current_user.twitter_url do %>
+            <i class="bi bi-twitter"></i>
+          <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:introduction) %></th>
+          <td><%= current_user.introduction %></td>
+        </tr>
       </table>
     </div>
   </div>
