@@ -11,7 +11,17 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
+    <%# <%= render 'shared/flash_message' %> 
     <%= yield %>
+    <%= render 'shared/footer' %>
+    <br>
+    <br>
+    <br>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   </body>
 </html>
