@@ -1,0 +1,47 @@
+<header class='sticky-top'>
+  <nav class='navbar navbar-expand-lg navigation navbar-light'>
+    <div class="container">
+      <%= link_to t('defaults.app_name'), root_path, class: 'navbar-brand' %>
+
+      <div class='d-block d-lg-none'>
+        <button class=' btn btn-link' type='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+          <%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '40x40' %>
+        </button>
+        <div class='dropdown-menu dropdown-menu-end'>
+          <% if current_user.nickname.present? %>
+            <%= current_user.nickname %>
+          <% else %>
+            <%= current_user.name %>
+          <% end %>
+          <div class='dropdown-divider'></div>
+          <%= link_to t('profiles.show.title'), profile_path, class: 'dropdown-item' %>
+          <%#= link_to t('defaults.logout'), user_path(@user), data: { turbo_method: :delete }, class: 'dropdown-item' %>
+          <%#= link_to t('defaults.back_talk'), 'https://line.me/R/ti/p/@910svtxk', class: 'dropdown-item' %>
+        </div>
+      </div>
+
+      <div class='collapse navbar-collapse d-none d-lg-block' id='navbarSupportedContent'>
+        <ul class='navbar-nav ms-auto me-3 main-nav align-items-center'>
+          <li class='nav-item dropdown dropdown-slide'>
+            <a href='#' class='nav-link' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false' id='header-profile'>
+              <%= image_tag current_user.avatar.url, class: 'rounded-circle mr15', size: '40x40' %>
+            </a>
+            <div class='dropdown-menu dropdown-menu-end'>
+              <div class='dropdown-item'>
+                <% if current_user.nickname.present? %>
+                  <%= current_user.nickname %>
+                <% else %>
+                  <%= current_user.name %>
+                <% end %>
+              </div>
+              <div class='dropdown-divider'></div>
+              <%= link_to t('profiles.show.title'), profile_path, class: 'dropdown-item' %>
+              <%#= link_to t('defaults.logout'), user_path(@user), data: { turbo_method: :delete }, class: 'dropdown-item' %>
+              <%#= link_to t('defaults.back_talk'), 'https://line.me/R/ti/p/@910svtxk', class: 'dropdown-item' %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
