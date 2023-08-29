@@ -1,5 +1,7 @@
 ja:
   defaults:
+    app_name: 'RFA_Record'
+    copyright: 'Copyright © 2023. RFA_Record'
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
