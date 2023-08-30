@@ -3,6 +3,7 @@
     <div class="col-md-10 offset-md-1">
       <h1><%= t('.title') %></h1>
       <%= form_with model: @user, url: profile_path, local: true do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
           <div class="form-group">
             <%= f.label :nickname %>
             <%= f.text_field :nickname, class: "form-control mb-3" %>
