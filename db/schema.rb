@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_828_063_422) do
+ActiveRecord::Schema[7.0].define(version: 20_230_907_060_501) do
+  create_table 'activity_images', force: :cascade do |t|
+    t.string 'image', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
   create_table 'users', force: :cascade do |t|
     t.string 'line_user_id', null: false
     t.datetime 'created_at', null: false

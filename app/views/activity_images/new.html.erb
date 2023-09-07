@@ -1,0 +1,5 @@
+<%= form_for @photo, html: { multipart: true } do |f| %>
+  <%= f.file_field :image, accept: 'image/*' %>
+  <%= f.hidden_field :image_cache %>
+  <%= f.submit '画像を送信' %>
+<% end %>

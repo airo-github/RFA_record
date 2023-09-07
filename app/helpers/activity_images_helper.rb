@@ -1,0 +1,2 @@
+module ActivityImagesHelper
+end
