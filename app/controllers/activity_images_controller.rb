@@ -9,7 +9,7 @@ class ActivityImagesController < ApplicationController
 
   def create
     @image = ActivityImage.new(image_params)
-    # @image.user_id = current_user.id
+    @image.user_id = current_user.id
     if @image.save
       redirect_to activity_images_path, notice: t('default.success')
     else

@@ -4,7 +4,7 @@
     <div class="col-12">
       <div class="row">
         <% if @images.present? %>
-          <%= render @images %>
+          <%= render partial: 'activity_images/image', collection: @images, as: :activity_image %>
         <% else %>
           <p><%= t('.no_result') %></p>
         <% end %>
