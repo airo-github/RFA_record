@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/after_login', to: 'static_pages#after_login'
   resource :user, only: %i[new create]
   resource :profile, only: %i[show edit update]
+  resources :activity_images, only: %i[index new create]
 end
