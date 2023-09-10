@@ -34,6 +34,9 @@ gem 'mini_magick'
 # 国際化
 gem 'rails-i18n'
 
+# OCR機能
+gem 'rtesseract'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
