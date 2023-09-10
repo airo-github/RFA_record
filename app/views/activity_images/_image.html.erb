@@ -4,6 +4,7 @@
       <%= link_to '#' do %>
         <%= image_tag activity_image.image.url, class: 'card-img-top', size: '300x200' %>
       <% end %>
+      <p>OCR Result: <%= activity_image.ocr_text %></p>
       <div class="card-body">
         <h4 class="card-title">
           <a href="#"><%#= link_to post.title, post_path(post) %></a>
