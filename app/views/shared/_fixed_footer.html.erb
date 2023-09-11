@@ -1,0 +1,32 @@
+<footer class="fixed-bottom">
+  <nav class='navbar navbar-expand navigation navbar-light bg-light'>
+    <div class='container-fluid'>
+      <ul class='navbar-nav d-flex justify-content-center main-nav align-items-center w-100'>
+        <li class='nav-item flex-grow-1 text-center'>
+          <%= link_to activity_images_path, class: 'dropdown-item d-flex flex-column align-items-center' do %>
+            <i class="fa-solid fa-bowl-food fs-5"></i>
+            <%= t('defaults.index') %>
+          <% end %>
+        </li>
+        <li class='nav-item flex-grow-1 text-center'>
+          <%= link_to new_activity_image_path, class: 'dropdown-item d-flex flex-column align-items-center' do %>
+            <i class="bi bi-send-fill fs-5"></i>
+            <%= t('posts.new.title') %>
+          <% end %>
+        </li>
+        <li class='nav-item flex-grow-1 text-center'>
+          <%= link_to '#', class: 'dropdown-item d-flex flex-column align-items-center' do %>
+            <i class="bi bi-gift-fill fs-5"></i>
+            <%= t('posts.received.title') %>
+          <% end %>
+        </li>
+        <li class='nav-item flex-grow-1 text-center'>
+          <%= link_to '#', class: 'dropdown-item d-flex flex-column align-items-center' do %>
+            <i class="bi bi-calendar-check-fill fs-5"></i>
+            <%= t('posts.scheduled.title') %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</footer>

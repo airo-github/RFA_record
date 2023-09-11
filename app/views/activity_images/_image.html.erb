@@ -1,0 +1,26 @@
+<div class="col-sm-12 col-lg-4 mb-3 grow-on-hover">
+  <div class="mb-3 border p-4 bg-light">
+    <div class="card">
+      <%= link_to '#' do %>
+        <%= image_tag activity_image.image.url, class: 'card-img-top', size: '300x200' %>
+      <% end %>
+      <p>OCR Result: <%= activity_image.ocr_text %></p>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#"><%#= link_to post.title, post_path(post) %></a>
+        </h4>
+          <%# if current_user && current_user.own?(image) %>
+            <%#= render 'crud_menus', post: post %>
+          <%# end %>
+        <ul class="list-inline">
+          <%= image_tag activity_image.user.avatar.url, class: 'rounded-circle', size: '40x40' %>
+          <% if activity_image.user.nickname.present? %>
+            <%= activity_image.user.nickname %>
+          <% else %>
+            <%= activity_image.user.name %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

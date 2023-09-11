@@ -1,0 +1,16 @@
+<div class="container pt-3">
+  <!-- 投稿一覧 -->
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% if @images.present? %>
+          <%= render partial: 'activity_images/image', collection: @images, as: :activity_image %>
+        <% else %>
+          <p><%= t('.no_result') %></p>
+        <% end %>
+      </div>
+      <!-- ページネーション -->
+      <%#= render 'pagination', posts: @posts %>
+    </div>
+  </div>
+</div>
