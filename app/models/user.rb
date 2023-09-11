@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :activity_images
+  has_many :activity_records
+
   mount_uploader :avatar, AvatarUploader
 
   validates :line_user_id, presence: true, uniqueness: true
