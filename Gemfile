@@ -37,6 +37,9 @@ gem 'rails-i18n'
 # OCR機能
 gem 'rtesseract'
 
+# OCR機能(Cloud Vision API)
+gem 'google-cloud-vision'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

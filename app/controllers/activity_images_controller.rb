@@ -11,8 +11,11 @@ class ActivityImagesController < ApplicationController
     @image = ActivityImage.new(image_params)
     @image.user_id = current_user.id
     # OCR処理を追加
-    ocr = RTesseract.new(@image.image.path, lang: 'jpn') # 画像のパスからOCR処理を実行
-    @image.ocr_text = ocr.to_s # OCRの結果をデータベースに保存
+    image_annotator = Google::Cloud::Vision.image_annotator
+    response = image_annotator.document_text_detection(
+      image: @image.image.path, max_results: 1, image_context: { language_hints: %i[ja en] }
+    )
+    @image.ocr_text = response.responses[0].text_annotations[0].description
 
     if @image.save
       redirect_to activity_images_path, notice: t('default.success')
