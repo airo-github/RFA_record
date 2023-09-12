@@ -33,7 +33,7 @@ class ActivityImagesController < ApplicationController
     @activity_record.user_id = current_user.id
 
     if @image.save && @activity_record.save
-      redirect_to activity_images_path, notice: t('default.success')
+      redirect_to edit_activity_record_path(@activity_record), notice: t('default.success')
     else
       render 'new'
     end

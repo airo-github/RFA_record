@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resource :user, only: %i[new create]
   resource :profile, only: %i[show edit update]
   resources :activity_images, only: %i[index new create]
+  resources :activity_records, only: %i[index edit update]
 end
