@@ -17,6 +17,12 @@ class ActivityRecordsController < ApplicationController
     end
   end
 
+  def destroy
+    @activity_record.destroy!
+    redirect_to activity_records_path, success: t('defaults.message.deleted', item: Post.model_name.human),
+                                       status: :see_other
+  end
+
   private
 
   def activity_record_params
