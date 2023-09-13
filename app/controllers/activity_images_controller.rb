@@ -32,7 +32,9 @@ class ActivityImagesController < ApplicationController
     @activity_record = ActivityRecord.new(act_date:, act_time:, act_calories:, act_distance:)
     @activity_record.user_id = current_user.id
 
-    if @image.save && @activity_record.save
+    if @image.save
+      @activity_record.activity_image_id = @image.id
+      @activity_record.save
       redirect_to edit_activity_record_path(@activity_record), notice: t('default.success')
     else
       render 'new'

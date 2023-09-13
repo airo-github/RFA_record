@@ -1,4 +1,4 @@
-<%= form_for @image, html: { multipart: true } do |f| %>
+<%= form_for @image, url: activity_images_path, html: { multipart: true } do |f| %>
   <%= f.file_field :image, accept: 'image/*' %>
   <%= f.hidden_field :image_cache %>
   <%= f.submit '画像を送信' %>
