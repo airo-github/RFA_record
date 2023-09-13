@@ -6,6 +6,9 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     edit: '編集'
+    message:
+      delete_confirm: "削除してもよろしいですか？"
+      deleted: '%{item}が削除されました'
   users:
     new:
       title: 'ユーザー登録'
