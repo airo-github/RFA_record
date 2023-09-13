@@ -11,10 +11,17 @@ class ActivityRecordsController < ApplicationController
     @activity_record = ActivityRecord.find(params[:id])
 
     if @activity_record.update(activity_record_params)
-      redirect_to activity_records_path, notice: 'Activity record was successfully updated.'
+      redirect_to activity_records_path, success: t('record.create')
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @activity_record = current_user.activity_records.find(params[:id])
+    @activity_record.destroy!
+    redirect_to activity_records_path, success: t('record.deleted'),
+                                       status: :see_other
   end
 
   private

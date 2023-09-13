@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_120414) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_13_005210) do
   create_table "activity_images", force: :cascade do |t|
     t.string "image", null: false
     t.datetime "created_at", null: false
@@ -30,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_120414) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.integer "activity_image_id", null: false
+    t.index ["activity_image_id"], name: "index_activity_records_on_activity_image_id"
     t.index ["user_id"], name: "index_activity_records_on_user_id"
   end
 
@@ -46,5 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_120414) do
   end
 
   add_foreign_key "activity_images", "users"
+  add_foreign_key "activity_records", "activity_images"
   add_foreign_key "activity_records", "users"
 end
