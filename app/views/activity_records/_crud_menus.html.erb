@@ -5,7 +5,7 @@
     <% end %>
   </li>
   <li class="list-inline-item">
-    <%= link_to activity_record_path(activity_record), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm') }  do %>
+    <%= button_to activity_record_path(activity_record), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }  do %>
       <i class="bi bi-trash"></i>
     <% end %>
   </li>
