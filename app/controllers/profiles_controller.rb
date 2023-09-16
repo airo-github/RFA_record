@@ -1,7 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
-  def show; end
+  def show
+    @records = ActivityRecord.order(:act_date).pluck(:act_date, :act_time, :act_calories, :act_distance)
+  end
 
   def edit; end
 
