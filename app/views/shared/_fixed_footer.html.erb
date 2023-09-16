@@ -4,26 +4,26 @@
       <ul class='navbar-nav d-flex justify-content-center main-nav align-items-center w-100'>
         <li class='nav-item flex-grow-1 text-center'>
           <%= link_to activity_records_path, class: 'dropdown-item d-flex flex-column align-items-center' do %>
-            <i class="fa-solid fa-bowl-food fs-5"></i>
-            <%= t('defaults.index') %>
+            <i class="bi bi-pen fs-5"></i>
+            <%= t('activity_records.index.title') %>
           <% end %>
         </li>
         <li class='nav-item flex-grow-1 text-center'>
           <%= link_to new_activity_image_path, class: 'dropdown-item d-flex flex-column align-items-center' do %>
             <i class="bi bi-send-fill fs-5"></i>
-            <%= t('posts.new.title') %>
+            <%= t('activity_images.new.title') %>
           <% end %>
         </li>
         <li class='nav-item flex-grow-1 text-center'>
-          <%= link_to '#', class: 'dropdown-item d-flex flex-column align-items-center' do %>
-            <i class="bi bi-gift-fill fs-5"></i>
-            <%= t('posts.received.title') %>
+          <%= link_to profile_path, class: 'dropdown-item d-flex flex-column align-items-center' do %>
+            <i class="bi bi-graph-up fs-5"></i>
+            <%= t('profiles.show.graph') %>
           <% end %>
         </li>
         <li class='nav-item flex-grow-1 text-center'>
           <%= link_to '#', class: 'dropdown-item d-flex flex-column align-items-center' do %>
             <i class="bi bi-calendar-check-fill fs-5"></i>
-            <%= t('posts.scheduled.title') %>
+            <%= '（リマインド機能）' %>
           <% end %>
         </li>
       </ul>
