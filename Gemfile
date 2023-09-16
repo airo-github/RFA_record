@@ -40,6 +40,10 @@ gem 'rtesseract'
 # OCR機能(Cloud Vision API)
 gem 'google-cloud-vision'
 
+gem 'hotwire-rails'
+gem 'stimulus-rails'
+gem 'turbo-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

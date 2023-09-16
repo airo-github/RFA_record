@@ -1,0 +1,29 @@
+<div class="col-sm-12 col-lg-4 mb-3 grow-on-hover">
+  <div class="mb-3 border p-4 bg-light">
+    <div class="card">
+      <p>活動日程: <%= activity_record.act_date %></p>
+      <p>活動時間: <%= activity_record.act_time %> 秒</p>
+      <p>消費kcal: <%= activity_record.act_calories %> kcal</p>
+      <p>走行距離: <%= activity_record.act_distance %> km</p>
+      <% if activity_record.comment.present? %>
+        <p>コメント: <%= activity_record.comment %>
+      <% end %>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#"><%#= link_to post.title, post_path(post) %></a>
+        </h4>
+          <% if current_user && current_user.own?(activity_record) %>
+            <%= render 'crud_menus', activity_record: activity_record %>
+          <% end %>
+        <ul class="list-inline">
+          <%= image_tag activity_record.user.avatar.url, class: 'rounded-circle', size: '40x40' %>
+          <% if activity_record.user.nickname.present? %>
+            <%= activity_record.user.nickname %>
+          <% else %>
+            <%= activity_record.user.name %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
