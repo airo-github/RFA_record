@@ -21,5 +21,12 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+      graph: 'グラフ'
     edit:
       title: 'プロフィール編集'
+  activity_images:
+    new:
+      title: '画像投稿'
+  activity_records:
+    index:
+      title: '活動記録一覧'
