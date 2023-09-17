@@ -48,6 +48,9 @@ gem 'turbo-rails'
 gem 'aws-sdk-s3'
 gem 'fog-aws'
 
+# postgreSQL
+gem 'pg'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
