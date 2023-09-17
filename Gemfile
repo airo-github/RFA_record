@@ -44,6 +44,10 @@ gem 'hotwire-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
+# S3用
+gem 'aws-sdk-s3'
+gem 'fog-aws'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
