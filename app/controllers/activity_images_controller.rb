@@ -1,4 +1,6 @@
 class ActivityImagesController < ApplicationController
+  before_action :login_required, only: %i[new create]
+
   def index
     @images = ActivityImage.all.includes(:user).order(created_at: :desc)
   end
