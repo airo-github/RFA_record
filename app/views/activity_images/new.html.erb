@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="p-3 mb-2 bg-danger text-white">画像は「1MB以下」「jpg jpeg gif png」しか受け付けていません</h1>
+  </div>
+</div>
 <%= form_with model: @image, url: activity_images_path, local: true do |f| %>
   <%= f.file_field :image, accept: 'image/*' %>
   <%= f.hidden_field :image_cache %>

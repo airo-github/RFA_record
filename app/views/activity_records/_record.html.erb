@@ -2,7 +2,7 @@
   <div class="mb-3 border p-4 bg-light">
     <div class="card">
       <p>活動日程: <%= activity_record.act_date %></p>
-      <p>活動時間: <%= activity_record.act_time %> 秒</p>
+      <p>活動時間: <%= activity_record.act_time / 60 %> 分 <%= activity_record.act_time % 60 %> 秒</p>
       <p>消費kcal: <%= activity_record.act_calories %> kcal</p>
       <p>走行距離: <%= activity_record.act_distance %> km</p>
       <% if activity_record.comment.present? %>
