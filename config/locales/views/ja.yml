@@ -6,6 +6,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     edit: '編集'
+    success: '処理が完了しました'
     message:
       delete_confirm: "削除してもよろしいですか？"
       deleted: '%{item}が削除されました'
@@ -26,7 +27,7 @@ ja:
       title: 'プロフィール編集'
   activity_images:
     new:
-      title: '画像投稿'
+      title: '写真投稿'
   activity_records:
     index:
-      title: '活動記録一覧'
+      title: '記録一覧'

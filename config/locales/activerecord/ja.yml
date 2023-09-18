@@ -2,7 +2,14 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      activity_record: '活動記録'
     attributes:
+      activity_record:
+        act_date: '日付'
+        act_time: '活動時間'
+        act_calories: '消費kcal'
+        act_distance: '走行距離'
+        comment: 'コメント'
       user:
         name: '名前'
         nickname: '名前'
