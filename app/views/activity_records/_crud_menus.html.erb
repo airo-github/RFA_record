@@ -1,12 +1,15 @@
 <ul class="crud-menu-btn list-inline justify-content-center" style="float: right;">
   <li class="list-inline-item">
-    <%= link_to edit_activity_record_path(activity_record), id: 'button-edit-#{activity_record.id}' do %>
-      <i class="bi bi-pen"></i>
-    <% end %>
+    <%= link_to "Share", "https://twitter.com/intent/tweet?url=https://rfa-record.onrender.com/activity_records&text=#{activity_record.act_date}の活動記録です。
+                                    %0A活動時間：#{activity_record.act_time / 60}分#{activity_record.act_time % 60}秒
+                                    %0A消費kcal：#{activity_record.act_calories}kcal
+                                    %0A走行距離：#{activity_record.act_distance}km
+                                    %0A&hashtags=RFA_Record", class: 'btn btn-dark btn-sm', target: '_blank' %>
   </li>
   <li class="list-inline-item">
-    <%= button_to activity_record_path(activity_record), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }  do %>
-      <i class="bi bi-trash"></i>
-    <% end %>
+    <%= link_to '編集', edit_activity_record_path(activity_record), id: 'button-edit-#{activity_record.id}' %>
+  </li>
+  <li class="list-inline-item">
+    <%= button_to '削除', activity_record_path(activity_record), method: :delete, form: { data: { turbo_confirm: t('defaults.confirm') } } %>
   </li>
 </ul>

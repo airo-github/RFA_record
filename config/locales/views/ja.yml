@@ -8,6 +8,7 @@ ja:
     update: '更新'
     edit: '編集'
     success: '処理が完了しました'
+    confirm: '削除してもよろしいですか？'
     message:
       delete_confirm: "削除してもよろしいですか？"
       deleted: '%{item}が削除されました'
