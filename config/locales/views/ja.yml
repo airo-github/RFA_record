@@ -12,6 +12,13 @@ ja:
     message:
       delete_confirm: "削除してもよろしいですか？"
       deleted: '%{item}が削除されました'
+  static_pages:
+    terms:
+      title: '利用規約'
+    privacy:
+      title: 'プライバシーポリシー'
+    contact:
+      title: '問い合わせ'
   users:
     new:
       title: 'ユーザー登録'
