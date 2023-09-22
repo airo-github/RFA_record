@@ -15,7 +15,7 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('RFA_Record_OGP.jpeg'), # 配置するパスやファイル名によって変更すること
+        image: image_url('images/RFA_Record_OGP.jpeg'),
         local: 'ja-JP'
       }
     }
