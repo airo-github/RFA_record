@@ -51,6 +51,9 @@ gem 'fog-aws'
 # postgreSQL
 gem 'pg'
 
+# OGP用
+gem 'meta-tags'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
