@@ -1,11 +1,12 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      title: 'ZooMania',
+      site: 'RFA_Record',
+      title: 'RFAの活動記録を保存するサービス',
       reverse: true,
       charset: 'utf-8',
-      description: '動物園に行こう！',
-      keywords: '動物,動物園,動物園一覧',
+      description: '写真を撮るだけで活動記録が簡単に保存、グラフ化できます',
+      keywords: 'リングフィットアドベンチャー',
       canonical: request.original_url,
       separator: '|',
       og: {
@@ -19,7 +20,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@RYOYA_RUNTEQ44',
+        site: '@Rz0Bp',
         image: image_url('ogp.jpeg')
       }
     }
