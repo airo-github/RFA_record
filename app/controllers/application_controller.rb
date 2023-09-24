@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    # ログインしていない（current_userが存在しない場合）root_pathに飛ばす
-    redirect_to root_path unless current_user
+    # ログインしていない（current_userが存在しない場合）ログインページに飛ばす
+    redirect_to before_login_path unless current_user
   end
 
   def logged_in?
