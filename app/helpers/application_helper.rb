@@ -15,13 +15,13 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp.jpeg'),
+        image: image_url('ogp.png'),
         local: 'ja-JP'
       },
       twitter: {
         card: 'summary_large_image',
         site: '@Rz0Bp',
-        image: image_url('ogp.jpeg')
+        image: image_url('ogp.png')
       }
     }
   end
