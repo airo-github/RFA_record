@@ -3,6 +3,7 @@ import * as bootstrap from "bootstrap"
 import './preview'
 import "@hotwired/turbo-rails"
 import "./controllers"
+import './header'
 import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()
