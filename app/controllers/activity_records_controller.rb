@@ -1,6 +1,6 @@
 class ActivityRecordsController < ApplicationController
   def index
-    @activity_records = ActivityRecord.all.includes(:user).order(created_at: :desc)
+    @activity_records = ActivityRecord.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def edit
