@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: %i[edit update]
-  before_action :login_required, only: %i[show edit update]
+  before_action :set_user, only: %i[new edit update]
+  before_action :login_required, only: %i[new show edit update]
+
+  def new
+    @activity_records = @user.activity_records.order(created_at: :desc).page(params[:page])
+  end
 
   def show
     @records = current_user.activity_records.order(:act_date).pluck(:act_date, :act_time, :act_calories, :act_distance)

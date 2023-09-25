@@ -13,7 +13,7 @@
           <a href="#"><%#= link_to post.title, post_path(post) %></a>
         </h4>
           <% if current_user && current_user.own?(activity_record) %>
-            <%= render 'crud_menus', activity_record: activity_record %>
+            <%= render 'activity_records/crud_menus', activity_record: activity_record %>
           <% end %>
         <ul class="list-inline">
           <%= image_tag activity_record.user.avatar.url, class: 'rounded-circle', size: '40x40' %>
