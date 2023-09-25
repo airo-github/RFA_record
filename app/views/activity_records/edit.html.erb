@@ -19,6 +19,10 @@
     <%= f.label :comment %>
     <%= f.text_field :comment %>
   </div>
+  <div class="field">
+    <%= f.label :visible, '活動記録を表示する場合は☑️してください' %>
+    <%= f.check_box :visible, checked: false %>
+  </div>
   <div class="actions">
     <%= f.submit t('defaults.update') %>
   </div>
