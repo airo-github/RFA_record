@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :visible, '活動記録を表示する場合は☑️してください' %>
-    <%= f.check_box :visible, checked: false %>
+    <%= f.check_box :visible, checked: @activity_record.visible %>
   </div>
   <div class="actions">
     <%= f.submit t('defaults.update') %>
