@@ -27,7 +27,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # デフォルトの画像ファイル
   def default_url
-    'avatar_def.png'
+    'avatar_def.webp'
   end
 
   # Process files as they are uploaded:
