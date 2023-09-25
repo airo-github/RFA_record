@@ -1,6 +1,6 @@
 class ActivityRecordsController < ApplicationController
   def index
-    @activity_records = ActivityRecord.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @activity_records = ActivityRecord.where(visible: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def edit
@@ -27,6 +27,6 @@ class ActivityRecordsController < ApplicationController
   private
 
   def activity_record_params
-    params.require(:activity_record).permit(:act_date, :act_time, :act_calories, :act_distance, :comment)
+    params.require(:activity_record).permit(:act_date, :act_time, :act_calories, :act_distance, :comment, :visible)
   end
 end
