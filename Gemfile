@@ -54,6 +54,9 @@ gem 'pg'
 # OGP用
 gem 'meta-tags'
 
+# ページネーション用
+gem 'kaminari'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
