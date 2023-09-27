@@ -28,7 +28,9 @@
             <%= f.label :introduction %>
             <%= f.text_field :introduction, class: "form-control mb-3" %>
           </div>
-          <%= f.submit  class: "btn btn-primary" %>
+          <div class="actions">
+            <%= f.submit t('defaults.update') %>
+          </div>
       <% end %>
     </div>
   </div>

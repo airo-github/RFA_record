@@ -11,6 +11,9 @@ ja:
     confirm: '削除してもよろしいですか？'
     message:
       delete_confirm: "削除してもよろしいですか？"
+      create: '%{item}は作成できました'
+      updated: '%{item}が更新されました'
+      not_updated: '%{item}は更新できませんでした'
       deleted: '%{item}が削除されました'
   static_pages:
     terms:
