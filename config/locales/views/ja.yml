@@ -12,6 +12,7 @@ ja:
     message:
       delete_confirm: "削除してもよろしいですか？"
       create: '%{item}は作成できました'
+      not_created: '%{item}は作成できませんでした'
       updated: '%{item}が更新されました'
       not_updated: '%{item}は更新できませんでした'
       deleted: '%{item}が削除されました'
