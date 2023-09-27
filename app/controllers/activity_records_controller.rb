@@ -13,7 +13,8 @@ class ActivityRecordsController < ApplicationController
     if @activity_record.update(activity_record_params)
       redirect_to activity_records_path, success: t('record.update')
     else
-      render 'edit'
+      flash.now['danger'] = t('defaults.message.not_created', item: ActivityRecord.model_name.human)
+      render :edit, status: :see_other
     end
   end
 
