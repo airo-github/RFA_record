@@ -11,7 +11,7 @@ class ActivityRecordsController < ApplicationController
     @activity_record = ActivityRecord.find(params[:id])
 
     if @activity_record.update(activity_record_params)
-      redirect_to activity_records_path, success: t('record.create')
+      redirect_to activity_records_path, success: t('record.update')
     else
       render 'edit'
     end
@@ -20,7 +20,7 @@ class ActivityRecordsController < ApplicationController
   def destroy
     @activity_record = current_user.activity_records.find(params[:id])
     @activity_record.destroy!
-    redirect_to activity_records_path, success: t('record.deleted'),
+    redirect_to activity_records_path, danger: t('record.destroy'),
                                        status: :see_other
   end
 

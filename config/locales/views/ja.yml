@@ -40,3 +40,6 @@ ja:
   activity_records:
     index:
       title: '記録一覧'
+  record:
+    update: '活動記録を更新しました'
+    destroy: '活動記録を削除しました'
