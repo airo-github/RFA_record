@@ -1,6 +1,6 @@
 <div class="container pt-3">
   <div class="row">
-    <div class="col-md-10 offset-md-1">
+    <div class="col-md-10 bg-light offset-md-1">
       <h1 class="float-left mb-5"><%= t('.title') %></h1>
       <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-success float-right' %>
       <table class="table">
@@ -31,7 +31,9 @@
         </tr>
       </table>
       <div class='text-center'>
-        <%= link_to '個人の活動記録', new_profile_path %>
+        <%= link_to new_profile_path do %>
+          <i class='text-light bg-info'>個人の活動記録</i>
+        <% end %>
       </div>
       <br>
       <canvas id="myChart"></canvas>
