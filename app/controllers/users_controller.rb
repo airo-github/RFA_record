@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def new
     return unless current_user
 
-    redirect_to after_login_path
+    redirect_to activity_records_path
   end
 
   def create

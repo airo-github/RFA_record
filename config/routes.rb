@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
   get '/before_login', to: 'static_pages#before_login'
-  get '/after_login', to: 'static_pages#after_login'
   get '/terms', to: 'static_pages#terms'
   get '/privacy', to: 'static_pages#privacy'
   resource :user, only: %i[new create]
