@@ -1,3 +1,4 @@
+<div class='mt-3 bg-light'>
 <%= form_for @activity_record, url: activity_record_path(@activity_record), method: :patch do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
@@ -28,4 +29,4 @@
     <%= f.submit t('defaults.update') %>
   </div>
 <% end %>
-
+</div>
