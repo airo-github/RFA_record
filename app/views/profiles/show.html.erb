@@ -29,6 +29,10 @@
           <th scope="row"><%= User.human_attribute_name(:introduction) %></th>
           <td><%= current_user.introduction %></td>
         </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:reminder_time) %></th>
+          <td><%= current_user.reminder_time.strftime('%H:%M') if current_user.reminder_time %></td>
+        </tr>
       </table>
       <div class='text-center'>
         <%= link_to new_profile_path do %>

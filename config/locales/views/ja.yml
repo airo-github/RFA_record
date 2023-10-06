@@ -47,3 +47,6 @@ ja:
   record:
     update: '活動記録を更新しました'
     destroy: '活動記録を削除しました'
+  reminder_times:
+    new:
+      title: 'リマインド通知'

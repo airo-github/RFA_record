@@ -57,6 +57,12 @@ gem 'meta-tags'
 # ページネーション用
 gem 'kaminari'
 
+# LINE Messaiging API
+gem 'line-bot-api'
+
+# 自動送信用
+gem 'sidekiq'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 mt-3 bg-light">
+      <h1><%= t('.title') %></h1>
+      <%= form_with model: @user, url: reminder_time_path, method: :post, local: true do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+          <div class="field">
+            <%= f.label :reminder_time %>
+            <%= f.time_field :reminder_time, class: "form-control mb-3" %>
+          </div>
+          <div class="actions mb-2">
+            <%= f.submit t('defaults.update') %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
