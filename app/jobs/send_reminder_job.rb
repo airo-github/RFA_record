@@ -18,7 +18,7 @@ class SendReminderJob < ApplicationJob
     }
 
     payload = {
-      to: user.line_id,
+      to: user.line_user_id,
       messages: [
         {
           type: 'text',
