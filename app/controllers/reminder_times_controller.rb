@@ -7,7 +7,7 @@ class ReminderTimesController < ApplicationController
   def create
     @user = current_user
     if @user.update(reminder_time_params)
-      redirect_to profile_path, notice: '通知時間が設定されました。'
+      redirect_to profile_path, success: '通知時間が設定されました。'
     else
       render :new
     end
