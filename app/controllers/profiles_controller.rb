@@ -8,6 +8,12 @@ class ProfilesController < ApplicationController
 
   def show
     @records = current_user.activity_records.order(:act_date).pluck(:act_date, :act_time, :act_calories, :act_distance)
+    @weekly_records = current_user.activity_records.where('act_date >= ?', 1.week.ago).order(:act_date).pluck(
+      :act_date, :act_time, :act_calories, :act_distance
+    )
+    @monthly_records = current_user.activity_records.where('act_date >= ?', 1.month.ago).order(:act_date).pluck(
+      :act_date, :act_time, :act_calories, :act_distance
+    )
   end
 
   def edit; end
