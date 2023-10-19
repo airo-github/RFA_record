@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "styles", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= display_meta_tags(default_meta_tags) %>
     
@@ -30,14 +29,14 @@
     <% end %>
     <br>
     <br>
-    <br>
     <%= render 'shared/flash_message' %> 
     <%= yield %>
     <%= render 'shared/footer' %>
-    <br>
-    <br>
-    <br>
-    <br>
+    <% if current_user %>
+      <br>
+      <br>
+      <br>
+    <% end %>
     <%= render 'shared/fixed_footer' if current_user %>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   </body>
