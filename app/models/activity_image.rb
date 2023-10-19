@@ -9,15 +9,20 @@ class ActivityImage < ApplicationRecord
     response = Google::Cloud::Vision.image_annotator.document_text_detection(
       image: image.url, max_results: 1, image_context: { language_hints: %i[ja en] }
     )
+
     ocr_text = response.responses[0].text_annotations[0].description
 
-    min_sec = ocr_text.match(/(\d+分\s*\d+\s*秒)/)[0] # '〇〇分〇〇秒'を抽出
+    min_sec = ocr_text.match(/(\\d+分\\s*\\d+\\s*秒)/)&.first
+    min = min_sec&.match(/(\\d+)分/)&.to_a&.dig(1)&.to_i || 0
+    sec = min_sec&.match(/(\\d+\\s*)秒/)&.to_a&.dig(1)&.to_i || 0
+    kcal = ocr_text.match(/(\\d+\\.\\d+kcal)/)&.to_a&.dig(0)&.gsub(/kcal/, '')&.to_f || 0.0
+    km = ocr_text.match(/(\\d+\\.\\d+km)/)&.to_a&.dig(0)&.gsub(/km/, '')&.to_f || 0.0
 
     {
-      min: min_sec.match(/(\d+)分/)[1].to_i, # 分を抽出・数値化
-      sec: min_sec.match(/(\d+\s*)秒/)[1].to_i, # 秒を抽出・数値化
-      kcal: ocr_text.match(/(\d+\.\d+kcal)/)[0].gsub(/kcal/, '').to_f, # '〇〇.〇〇kcal'を抽出・数値化
-      km: ocr_text.match(/(\d+\.\d+km)/)[0].gsub(/km/, '').to_f # '〇〇.〇〇km'を抽出・数値化
+      min:,
+      sec:,
+      kcal:,
+      km:
     }
   end
 end
