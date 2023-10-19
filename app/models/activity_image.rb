@@ -14,10 +14,10 @@ class ActivityImage < ApplicationRecord
     min_sec = ocr_text.match(/(\d+分\s*\d+\s*秒)/)[0] # '〇〇分〇〇秒'を抽出
 
     {
-      min: min_sec.match(/(\d+)分/)[1].to_i, # 分を抽出・数値化
-      sec: min_sec.match(/(\d+\s*)秒/)[1].to_i, # 秒を抽出・数値化
-      kcal: ocr_text.match(/(\d+\.\d+kcal)/)[0].gsub(/kcal/, '').to_f, # '〇〇.〇〇kcal'を抽出・数値化
-      km: ocr_text.match(/(\d+\.\d+km)/)[0].gsub(/km/, '').to_f # '〇〇.〇〇km'を抽出・数値化
+      min: min_sec.match(/(\d+)分/)[1]&.to_i || 0,
+      sec: min_sec.match(/(\d+\s*)秒/)[1]&.to_i || 0,
+      kcal: ocr_text.match(/(\d+\.\d+kcal)/)[0].gsub(/kcal/, '')&.to_f || 0.0,
+      km: ocr_text.match(/(\d+\.\d+km)/)[0].gsub(/km/, '')&.to_f || 0.0
     }
   end
 end
