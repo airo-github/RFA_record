@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
     if current_user.nil?
       render 'before_login'
     else
-      render :after_login
+      redirect_to activity_records_path
     end
   end
 
