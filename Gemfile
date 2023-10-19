@@ -63,6 +63,8 @@ gem 'line-bot-api'
 # 自動送信用
 gem 'sidekiq'
 
+gem 'sassc-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

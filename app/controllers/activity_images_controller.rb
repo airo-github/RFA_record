@@ -19,10 +19,12 @@ class ActivityImagesController < ApplicationController
       if activity_record
         redirect_to edit_activity_record_path(activity_record), success: t('defaults.success')
       else
-        handle_record_save_error(ActivityRecord.model_name.human)
+        flash.now['danger'] = t('defaults.message.not_created', item: ActivityImage.model_name.human)
+        render :new, status: :see_other
       end
     else
-      handle_record_save_error(ActivityImage.model_name.human)
+      flash.now['danger'] = t('defaults.message.not_created', item: ActivityRecord.model_name.human)
+      render :new, status: :see_other
     end
   end
 
