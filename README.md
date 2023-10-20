@@ -39,28 +39,32 @@ RFA_record（仮）は以下の特徴を備えています。
 - リマインド機能による習慣定着のサポート
   - ユーザーが設定した時刻にLINE通知で活動時間をお知らせし、習慣の定着をサポートします。
 
-## 実装を予定している機能
-### MVP
+## 主な機能
 - 会員登録（LINE）
 - ログイン
 - プロフィール編集
 - 写真送付
 - 画像認識APIによるデータ抽出
 - 文字化したデータのTwitter投稿機能
-- データのグラフ化（簡易）
 - 活動記録投稿
-
-### その後の機能
-- 活動記録保存時に自動投稿機能
   - ユーザーが選択可能
-- グラフを週間、月間で表示できる機能
-- リマインド機能
+- 活動記録のグラフを週間、月間で表示できる機能
+- (リマインド機能)
   - ユーザーが設定した時刻に活動時間をLINE通知でお知らせしてくれる機能
-- 他人の活動記録を見える化
-  - プロフィールページに自分と同じように活動記録が表示される（任意）
 
 ## 画面遷移図
 [figma](https://www.figma.com/file/un8cIHFMRvSCLWNKG3npIT/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=iHrcsFHyKmszz8YF-1)
 
 ## ER図
 [ER図](https://drive.google.com/file/d/1wM5mSui0ylUu6iIfC968MGkoe8Krycow/view?usp=sharing)
+
+## 技術選定
+- Ruby 3.1.3
+- Rails 7.0.7.2
+- Node.js 20.8.0
+- CSS Bootstrap
+- Webアプリケーションサーバ Render
+- データベース PostgreSQL
+- ファイルサーバ AWS S3
+- LINE Front-end Framework（LIFF）
+- 画像認識 Cloud Visin API
