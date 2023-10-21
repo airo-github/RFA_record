@@ -1,37 +1,39 @@
-<div class="col-sm-12 col-lg-4 grow-on-hover py-3">
-  <div class="border p-4 bg-light">
-    <div class="card p-3">
-      <div class='bg-light'>
-        <%= form_for @activity_record, url: activity_record_path(@activity_record), method: :patch do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <div class="field mb-2">
-          <%= f.label :act_date %>
-          <%= f.date_field :act_date %>
+<div class="container pt-3 col-12">
+  <div class="row">
+    <div class="col-sm-12 col-lg-4 mb-3 grow-on-hover">
+      <div class="border p-4 bg-light">
+        <div class="card p-3">
+          <%= form_for @activity_record, url: activity_record_path(@activity_record), method: :patch do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <div class="field mb-2">
+            <%= f.label :act_date %>
+            <%= f.date_field :act_date %>
+          </div>
+          <div class="field mb-2">
+            <%= f.label :act_time %>
+            <%= f.text_field :act_time %>
+          </div>
+          <div class="field mb-2">
+            <%= f.label :act_calories %>
+            <%= f.text_field :act_calories %>
+          </div>
+          <div class="field mb-2">
+            <%= f.label :act_distance %>
+            <%= f.text_field :act_distance %>
+          </div>
+          <div class="field mb-2">
+            <%= f.label :comment %>
+            <%= f.text_field :comment %>
+          </div>
+          <div class="field mb-2">
+            <%= f.label :visible, '一覧に表示する場合は☑️してください' %>
+            <%= f.check_box :visible, checked: @activity_record.visible %>
+          </div>
+          <div class="actions">
+            <%= f.submit t('defaults.update') %>
+          </div>
+        <% end %>
         </div>
-        <div class="field mb-2">
-          <%= f.label :act_time %>
-          <%= f.text_field :act_time %>
-        </div>
-        <div class="field mb-2">
-          <%= f.label :act_calories %>
-          <%= f.text_field :act_calories %>
-        </div>
-        <div class="field mb-2">
-          <%= f.label :act_distance %>
-          <%= f.text_field :act_distance %>
-        </div>
-        <div class="field mb-2">
-          <%= f.label :comment %>
-          <%= f.text_field :comment %>
-        </div>
-        <div class="field mb-2">
-          <%= f.label :visible, '一覧に表示する場合は☑️してください' %>
-          <%= f.check_box :visible, checked: @activity_record.visible %>
-        </div>
-        <div class="actions">
-          <%= f.submit t('defaults.update') %>
-        </div>
-      <% end %>
       </div>
     </div>
   </div>
