@@ -7,7 +7,6 @@ class ReminderTimesController < ApplicationController
   def create
     @user = current_user
     if @user.update(reminder_time_params)
-      SendReminderJob.set(wait_until: @user.reminder_time).perform_later(@user.id, 'リマインド通知です。')
       redirect_to profile_path, success: '通知時間が設定されました。'
     else
       render :new
