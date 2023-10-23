@@ -3,20 +3,25 @@ class ApplicationController < ActionController::Base
   helper_method :login_required
   helper_method :logged_in?
   add_flash_types :success, :danger
+  before_action :update_session
 
   private
 
   def current_user
-    # @current_userがnilでsession[:user_id]に値が入っている場合、ユーザーを持ってくる
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def login_required
-    # ログインしていない（current_userが存在しない場合）ログインページに飛ばす
     redirect_to before_login_path unless current_user
   end
 
   def logged_in?
     !current_user.nil?
+  end
+
+  def update_session
+    return unless session[:user_id]
+
+    session[:_csrf_token] = form_authenticity_token
   end
 end
