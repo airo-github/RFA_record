@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   helper_method :login_required
   helper_method :logged_in?
   add_flash_types :success, :danger
-  before_action :update_session
 
   private
 
@@ -17,11 +16,5 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !current_user.nil?
-  end
-
-  def update_session
-    return unless session[:user_id]
-
-    session[:_csrf_token] = form_authenticity_token
   end
 end
