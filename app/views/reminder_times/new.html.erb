@@ -1,17 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 offset-md-1 my-3 bg-light">
-      <h1><%= t('.title') %></h1>
-      <%= form_with model: @user, url: reminder_time_path, method: :post, local: true do |f| %>
+<div class="container py-3">
+    <div class="border p-4 bg-light">
+      <div class="card p-3">
+        <h3 class="p-3 bg-light text-primary text-center"><%= t('.title') %></h3>
+      </div>
+      <br>
+      <div class='form text-center'>
+        <%= form_with model: @user, url: reminder_time_path, method: :post, local: true do |f| %>
         <%= render "shared/error_messages", object: f.object %>
-          <div class="field">
-            <%= f.label :reminder_time %>
-            <%= f.time_field :reminder_time, class: "form-control mb-3" %>
-          </div>
-          <div class="actions mb-2">
-            <%= f.submit t('defaults.update') %>
-          </div>
-      <% end %>
+        <div class='pb-4'>
+          <%= f.label :reminder_time %>
+        </div>
+        <%= f.time_field :reminder_time, class: "form-control mb-3" %>
+        <br>
+        <%= f.submit t('defaults.update') %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
